@@ -26,7 +26,6 @@ const allJobsQuery = (params) => {
 export const loader =
   (queryClient) =>
   async ({ request }) => {
-    console.log(request.url);
     const params = Object.fromEntries([
       ...new URL(request.url).searchParams.entries(),
     ]);

@@ -12,9 +12,20 @@ export const register = async (req, res) => {
   req.body.password = hashedPassword;
 
   const user = await User.create(req.body);
-  res
-    .status(StatusCodes.CREATED)
-    .json({ msg: `Користувач ${user.name} успішно зареєстрований` });
+
+  const token = createJWT({ userId: user._id, role: user.role });
+
+  res.status(StatusCodes.CREATED).json({
+    msg: `Користувач ${user.name} успішно зареєстрований`,
+    token,
+    user: {
+      name: user.name,
+      email: user.email,
+      lastName: user.lastName,
+      location: user.location,
+      role: user.role,
+    },
+  });
 };
 export const login = async (req, res) => {
   const user = await User.findOne({ email: req.body.email });
@@ -26,22 +37,19 @@ export const login = async (req, res) => {
 
   const token = createJWT({ userId: user._id, role: user.role });
 
-  const oneDay = 24 * 60 * 60 * 1000;
-
-  res.cookie(`token`, token, {
-    httpOnly: true,
-    expires: new Date(Date.now() + oneDay),
-    secure: process.env.NODE_ENV === "production",
+  res.status(StatusCodes.OK).json({
+    msg: `Користувач ${user.name} успішно увійшов`,
+    token,
+    user: {
+      name: user.name,
+      email: user.email,
+      lastName: user.lastName,
+      location: user.location,
+      role: user.role,
+    },
   });
-  res
-    .status(StatusCodes.OK)
-    .json({ msg: `Користувач ${user.name} успішно увійшов` });
 };
 
 export const logout = (req, res) => {
-  res.cookie(`token`, `logout`, {
-    httpOnly: true,
-    expires: new Date(Date.now()),
-  });
   res.status(StatusCodes.OK).json({ msg: `Користувач успішно вийшов` });
 };

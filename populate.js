@@ -2,22 +2,26 @@ import { readFile } from "fs/promises";
 import mongoose from "mongoose";
 import dotenv from "dotenv";
 dotenv.config();
-
 import Job from "./models/JobModel.js";
 import User from "./models/UserModel.js";
 
 try {
   await mongoose.connect(process.env.MONGO_URI);
-  const user = await User.findOne({ email: `test@test.com` });
+  const user = await User.findOne({ email: "test@test.com" });
+  if (!user)
+    throw new Error(
+      "Користувач test@test.com не знайдений. Спочатку зареєструйте його.",
+    );
+
   const jsonJobs = JSON.parse(
-    await readFile(new URL(`./utils/mockData.json`, import.meta.url)),
+    await readFile(new URL("./utils/mockData.json", import.meta.url)),
   );
-  const jobs = jsonJobs.map((job) => {
-    return { ...job, createdBy: user._id };
-  });
+  const jobs = jsonJobs.map((job) => ({ ...job, createdBy: user._id }));
+
   await Job.deleteMany({ createdBy: user._id });
   await Job.create(jobs);
-  console.log(`Успіх!!`);
+
+  console.log(`База даних успішно оновлена тестовими вакансіями!`);
   process.exit(0);
 } catch (error) {
   console.log(error);

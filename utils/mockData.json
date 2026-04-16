@@ -12,7 +12,7 @@
     "position": "Financial Advisor",
     "jobLocation": "Gandorhun",
     "status": "interview",
-    "jobType": "internship",
+    "jobType": "remote",
     "createdAt": "2026-03-24T16:35:45Z"
   },
   {
@@ -36,7 +36,7 @@
     "position": "Account Representative III",
     "jobLocation": "Jia’an",
     "status": "declined",
-    "jobType": "internship",
+    "jobType": "remote",
     "createdAt": "2025-08-27T08:17:50Z"
   },
   {
@@ -76,7 +76,7 @@
     "position": "Internal Auditor",
     "jobLocation": "Donnycarney",
     "status": "interview",
-    "jobType": "internship",
+    "jobType": "remote",
     "createdAt": "2025-12-14T05:53:44Z"
   },
   {
@@ -100,7 +100,7 @@
     "position": "Web Designer IV",
     "jobLocation": "Belén",
     "status": "interview",
-    "jobType": "internship",
+    "jobType": "remote",
     "createdAt": "2025-10-07T02:55:26Z"
   },
   {
@@ -108,7 +108,7 @@
     "position": "Developer IV",
     "jobLocation": "Sūrān",
     "status": "pending",
-    "jobType": "internship",
+    "jobType": "remote",
     "createdAt": "2026-01-20T12:52:29Z"
   },
   {
@@ -116,7 +116,7 @@
     "position": "Operator",
     "jobLocation": "Ugac Sur",
     "status": "interview",
-    "jobType": "internship",
+    "jobType": "remote",
     "createdAt": "2025-08-02T04:30:57Z"
   },
   {
@@ -156,7 +156,7 @@
     "position": "Dental Hygienist",
     "jobLocation": "Zhongxiang",
     "status": "declined",
-    "jobType": "internship",
+    "jobType": "remote",
     "createdAt": "2026-02-16T21:47:36Z"
   },
   {
@@ -188,7 +188,7 @@
     "position": "Health Coach II",
     "jobLocation": "Stare Miasto",
     "status": "pending",
-    "jobType": "internship",
+    "jobType": "remote",
     "createdAt": "2025-05-23T13:17:04Z"
   },
   {
@@ -196,7 +196,7 @@
     "position": "Associate Professor",
     "jobLocation": "Lopatyn",
     "status": "pending",
-    "jobType": "internship",
+    "jobType": "remote",
     "createdAt": "2025-07-16T15:28:24Z"
   },
   {
@@ -204,7 +204,7 @@
     "position": "Software Engineer IV",
     "jobLocation": "Domoni",
     "status": "pending",
-    "jobType": "internship",
+    "jobType": "remote",
     "createdAt": "2026-01-31T09:01:30Z"
   },
   {
@@ -236,7 +236,7 @@
     "position": "Software Engineer III",
     "jobLocation": "K’olīto",
     "status": "interview",
-    "jobType": "internship",
+    "jobType": "remote",
     "createdAt": "2025-10-31T16:55:33Z"
   },
   {
@@ -260,7 +260,7 @@
     "position": "Analog Circuit Design manager",
     "jobLocation": "Donja Mahala",
     "status": "declined",
-    "jobType": "internship",
+    "jobType": "remote",
     "createdAt": "2026-01-13T09:13:33Z"
   },
   {
@@ -276,7 +276,7 @@
     "position": "Programmer Analyst I",
     "jobLocation": "Dok Kham Tai",
     "status": "interview",
-    "jobType": "internship",
+    "jobType": "remote",
     "createdAt": "2026-01-15T07:26:09Z"
   },
   {
@@ -364,7 +364,7 @@
     "position": "Administrative Officer",
     "jobLocation": "Farsta",
     "status": "interview",
-    "jobType": "internship",
+    "jobType": "remote",
     "createdAt": "2025-07-18T18:17:18Z"
   },
   {
@@ -420,7 +420,7 @@
     "position": "Civil Engineer",
     "jobLocation": "Fuxing",
     "status": "interview",
-    "jobType": "internship",
+    "jobType": "remote",
     "createdAt": "2025-12-10T08:42:38Z"
   },
   {
@@ -428,7 +428,7 @@
     "position": "Help Desk Operator",
     "jobLocation": "Negara",
     "status": "pending",
-    "jobType": "internship",
+    "jobType": "remote",
     "createdAt": "2025-08-15T12:00:41Z"
   },
   {
@@ -444,7 +444,7 @@
     "position": "Developer I",
     "jobLocation": "Vinces",
     "status": "declined",
-    "jobType": "internship",
+    "jobType": "remote",
     "createdAt": "2026-03-15T03:05:31Z"
   },
   {
@@ -476,7 +476,7 @@
     "position": "VP Quality Control",
     "jobLocation": "Bosilovo",
     "status": "pending",
-    "jobType": "internship",
+    "jobType": "remote",
     "createdAt": "2026-03-07T07:26:25Z"
   },
   {
@@ -500,7 +500,7 @@
     "position": "Research Nurse",
     "jobLocation": "Sławoborze",
     "status": "declined",
-    "jobType": "internship",
+    "jobType": "remote",
     "createdAt": "2025-06-24T22:01:54Z"
   },
   {
@@ -564,7 +564,7 @@
     "position": "Sales Associate",
     "jobLocation": "Limushan",
     "status": "interview",
-    "jobType": "internship",
+    "jobType": "remote",
     "createdAt": "2026-03-26T18:35:26Z"
   },
   {
@@ -580,7 +580,7 @@
     "position": "Senior Quality Engineer",
     "jobLocation": "Perpignan",
     "status": "interview",
-    "jobType": "internship",
+    "jobType": "remote",
     "createdAt": "2025-07-23T20:00:57Z"
   },
   {
@@ -612,7 +612,7 @@
     "position": "Database Administrator III",
     "jobLocation": "Luleå",
     "status": "declined",
-    "jobType": "internship",
+    "jobType": "remote",
     "createdAt": "2025-05-03T12:03:00Z"
   },
   {
@@ -620,7 +620,7 @@
     "position": "Paralegal",
     "jobLocation": "San Diego",
     "status": "pending",
-    "jobType": "internship",
+    "jobType": "remote",
     "createdAt": "2025-11-10T21:53:24Z"
   },
   {
@@ -628,7 +628,7 @@
     "position": "Research Assistant I",
     "jobLocation": "Sagopshi",
     "status": "interview",
-    "jobType": "internship",
+    "jobType": "remote",
     "createdAt": "2026-02-26T16:37:13Z"
   },
   {
@@ -636,7 +636,7 @@
     "position": "Human Resources Assistant IV",
     "jobLocation": "Cabouco",
     "status": "declined",
-    "jobType": "internship",
+    "jobType": "remote",
     "createdAt": "2025-10-31T23:44:22Z"
   },
   {
@@ -660,7 +660,7 @@
     "position": "Quality Control Specialist",
     "jobLocation": "Cisalakdesa",
     "status": "pending",
-    "jobType": "internship",
+    "jobType": "remote",
     "createdAt": "2025-10-13T12:40:47Z"
   },
   {
@@ -684,7 +684,7 @@
     "position": "Clinical Specialist",
     "jobLocation": "Khisarya",
     "status": "declined",
-    "jobType": "internship",
+    "jobType": "remote",
     "createdAt": "2026-01-16T17:44:06Z"
   },
   {
@@ -692,7 +692,7 @@
     "position": "Staff Scientist",
     "jobLocation": "Tongli",
     "status": "declined",
-    "jobType": "internship",
+    "jobType": "remote",
     "createdAt": "2025-07-13T17:50:21Z"
   },
   {
@@ -740,7 +740,7 @@
     "position": "Nuclear Power Engineer",
     "jobLocation": "Oka",
     "status": "pending",
-    "jobType": "internship",
+    "jobType": "remote",
     "createdAt": "2026-01-17T09:26:28Z"
   },
   {
@@ -756,7 +756,7 @@
     "position": "Geological Engineer",
     "jobLocation": "Nabari",
     "status": "pending",
-    "jobType": "internship",
+    "jobType": "remote",
     "createdAt": "2025-07-04T05:07:10Z"
   },
   {
@@ -780,7 +780,7 @@
     "position": "Software Consultant",
     "jobLocation": "Chojnów",
     "status": "pending",
-    "jobType": "internship",
+    "jobType": "remote",
     "createdAt": "2026-02-05T02:36:58Z"
   },
   {
@@ -796,7 +796,7 @@
     "position": "Business Systems Development Analyst",
     "jobLocation": "La Paloma",
     "status": "pending",
-    "jobType": "internship",
+    "jobType": "remote",
     "createdAt": "2025-12-03T20:46:06Z"
   }
 ]

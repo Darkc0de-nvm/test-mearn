@@ -1,11 +1,5 @@
-import {
-  Outlet,
-  redirect,
-  useLoaderData,
-  useNavigate,
-  useNavigation,
-} from "react-router-dom";
-import { createContext, use, useContext, useState, useEffect } from "react";
+import { Outlet, redirect, useNavigate, useNavigation } from "react-router-dom";
+import { createContext, useContext, useState, useEffect } from "react";
 import Wrapper from "../assets/wrappers/Dashboard";
 import Navbar from "../components/Navbar";
 import SmallSidebar from "../components/SmallSidebar";
@@ -32,7 +26,6 @@ export const loader = (queryClient) => async () => {
 };
 
 const DashboardContext = createContext();
-
 export const useDashboardContext = () => useContext(DashboardContext);
 
 const DashboardLayout = ({ isDarkThemeEnabled, queryClient }) => {
@@ -40,9 +33,9 @@ const DashboardLayout = ({ isDarkThemeEnabled, queryClient }) => {
   const navigate = useNavigate();
   const navigation = useNavigation();
   const isPageLoading = navigation.state === "loading";
+
   const [showSidebar, setShowSidebar] = useState(false);
   const [isDarkTheme, setIsDarkTheme] = useState(isDarkThemeEnabled);
-  const [isAuthError, setIsAuthError] = useState(false);
 
   const toggleDarkTheme = () => {
     const newDarkTheme = !isDarkTheme;
@@ -57,27 +50,33 @@ const DashboardLayout = ({ isDarkThemeEnabled, queryClient }) => {
 
   const logoutUser = async () => {
     navigate(`/`);
-    await customFetch.get(`/auth/logout`);
+    await customFetch.post(`/auth/logout`);
     queryClient.invalidateQueries();
     toast.success(`Ви успішно вийшли!`);
   };
 
-  customFetch.interceptors.response.use(
-    (response) => {
-      return response;
-    },
-    (error) => {
-      if (error?.response?.status === 401) {
-        setIsAuthError(true);
-      }
-      return Promise.reject(error);
-    },
-  );
-
   useEffect(() => {
-    if (!isAuthError) return;
-    logoutUser();
-  }, [isAuthError]);
+    const handleAuthError = () => {
+      logoutUser();
+    };
+
+    const interceptor = customFetch.interceptors.response.use(
+      (response) => response,
+      (error) => {
+        if (error?.response?.status === 401) {
+          window.dispatchEvent(new Event("auth-error"));
+        }
+        return Promise.reject(error);
+      },
+    );
+
+    window.addEventListener("auth-error", handleAuthError);
+
+    return () => {
+      window.removeEventListener("auth-error", handleAuthError);
+      customFetch.interceptors.response.eject(interceptor);
+    };
+  }, []);
 
   return (
     <DashboardContext.Provider
@@ -105,4 +104,5 @@ const DashboardLayout = ({ isDarkThemeEnabled, queryClient }) => {
     </DashboardContext.Provider>
   );
 };
+
 export default DashboardLayout;

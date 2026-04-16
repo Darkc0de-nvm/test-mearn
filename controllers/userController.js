@@ -3,9 +3,13 @@ import User from "../models/UserModel.js";
 import Job from "../models/jobModel.js";
 import cloudinary from "cloudinary";
 import { formatImage } from "../middleware/multerMiddleware.js";
+import { UnauthenticatedError } from "../errors/customErrors.js";
 
 export const getCurrentUser = async (req, res) => {
   const user = await User.findOne({ _id: req.user.userId });
+  if (!user) {
+    throw new UnauthenticatedError("Користувача не знайдено");
+  }
   const userWithoutPassword = user.toJSON();
   res.status(StatusCodes.OK).json({ user: userWithoutPassword });
 };

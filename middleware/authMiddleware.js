@@ -7,7 +7,17 @@ import {
 import { TEST_USER_ID } from "../utils/constants.js";
 
 export const authenticateUser = (req, res, next) => {
-  const { token } = req.cookies;
+  // Check for token in cookies first
+  let token = req.cookies.token;
+
+  // If no token in cookies, check Authorization header
+  if (!token) {
+    const authHeader = req.headers.authorization;
+    if (authHeader && authHeader.startsWith("Bearer ")) {
+      token = authHeader.substring(7); // Remove 'Bearer ' prefix
+    }
+  }
+
   if (!token) throw new UnauthenticatedError("аутентифікація недійсна");
 
   try {

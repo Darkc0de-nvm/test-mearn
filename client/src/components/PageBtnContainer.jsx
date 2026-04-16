@@ -13,7 +13,6 @@ const PageBtnContainer = () => {
 
   const { search, pathname } = useLocation();
   const navigate = useNavigate();
-  console.log(search, pathname);
 
   const handlePageChange = (pageNumber) => {
     const searchParams = new URLSearchParams(search);
@@ -59,7 +58,7 @@ const PageBtnContainer = () => {
       );
     }
     // current page
-    if (currentPage != 1 && currentPage !== numOfPages) {
+    if (currentPage !== 1 && currentPage !== numOfPages) {
       pageButtons.push(
         addPageButton({
           pageNumber: currentPage,

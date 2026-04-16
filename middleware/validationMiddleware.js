@@ -6,7 +6,7 @@ import {
 } from "../errors/customErrors.js";
 import { JOB_STATUS, JOB_TYPE } from "../utils/constants.js";
 import mongoose from "mongoose";
-import Job from "../models/jobModel.js";
+import Job from "../models/JobModel.js";
 import User from "../models/UserModel.js";
 
 const withValidationErrors = (validateValues) => {
@@ -16,15 +16,18 @@ const withValidationErrors = (validateValues) => {
       const errors = validationResult(req);
       if (!errors.isEmpty()) {
         const errorMessages = errors.array().map((err) => err.msg);
-        if (errorMessages[0].startsWith("Вакансія")) {
-          throw new NotFoundError(errorMessages);
+
+        const firstMessage = errorMessages[0];
+
+        if (firstMessage.startsWith("Вакансія")) {
+          throw new NotFoundError(firstMessage);
         }
-        if (errorMessages[0].startsWith("Ви не маєте прав")) {
+        if (firstMessage.startsWith("Ви не маєте прав")) {
           throw new UnauthorizedError(
             "Ви не маєте прав для доступу до цієї вакансії",
           );
         }
-        throw new BadRequestError(errorMessages);
+        throw new BadRequestError(errorMessages.join(", "));
       }
       next();
     },

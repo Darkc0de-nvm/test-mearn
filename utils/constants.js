@@ -7,7 +7,7 @@ export const JOB_STATUS = {
 export const JOB_TYPE = {
   FULL_TIME: "full-time",
   PART_TIME: "part-time",
-  INTERNSHIP: "internship",
+  REMOTE: "remote",
 };
 
 export const JOB_SORT_BY = {
@@ -17,8 +17,7 @@ export const JOB_SORT_BY = {
   DESCENDING: "z-a",
 };
 
-export const TEST_USER_ID = "69d903ac75901acfac4bdaff";
-
+export const TEST_USER_ID = "69e13d42d1153ffe33005a6a";
 export const DEMO_USER = {
   email: "test@test.com",
   password: "secret123",

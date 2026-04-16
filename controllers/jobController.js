@@ -60,6 +60,17 @@ export const createJob = async (req, res) => {
 
 export const getJobById = async (req, res) => {
   const job = await Job.findById(req.params.id);
+
+  if (!job) {
+    return res
+      .status(StatusCodes.NOT_FOUND)
+      .json({ msg: "Вакансію не знайдено" });
+  }
+
+  if (req.user.userId !== job.createdBy.toString()) {
+    return res.status(StatusCodes.FORBIDDEN).json({ msg: "Доступ заборонено" });
+  }
+
   res.status(StatusCodes.OK).json({ job });
 };
 
