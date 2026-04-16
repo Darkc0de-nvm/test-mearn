@@ -1,6 +1,6 @@
 import { StatusCodes } from "http-status-codes";
 import User from "../models/UserModel.js";
-import Job from "../models/jobModel.js";
+import Job from "../models/JobModel.js";
 import cloudinary from "cloudinary";
 import { formatImage } from "../middleware/multerMiddleware.js";
 import { UnauthenticatedError } from "../errors/customErrors.js";
